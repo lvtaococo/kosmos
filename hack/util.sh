@@ -6,7 +6,7 @@ set -o pipefail
 
 # This script holds common bash variables and utility functions.
 
-CLUSTERLINK_GO_PACKAGE="github.com/kosmos.io/kosmos"
+KOSMOS_GO_PACKAGE="github.com/kosmos.io/kosmos"
 
 
 
@@ -21,7 +21,7 @@ CLUSTERLINK_TARGET_SOURCE=(
   clusterlink-floater=cmd/clusterlink/floater
   clusterlink-network-manager=cmd/clusterlink/network-manager
   clusterlink-controller-manager=cmd/clusterlink/controller-manager
-  clustertree-knode-manager=cmd/clustertree/knode-manager
+  clustertree-cluster-manager=cmd/clustertree/cluster-manager
   kosmosctl=cmd/kosmosctl
 )
 
@@ -466,7 +466,7 @@ function util:create_gopath_tree() {
   local repo_root=$1
   local go_path=$2
 
-  local go_pkg_dir="${go_path}/src/${CLUSTERLINK_GO_PACKAGE}"
+  local go_pkg_dir="${go_path}/src/${KOSMOS_GO_PACKAGE}"
   go_pkg_dir=$(dirname "${go_pkg_dir}")
 
   mkdir -p "${go_pkg_dir}"
